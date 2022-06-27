@@ -1,13 +1,369 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa&family=Fredoka+One&family=Kanit:wght@300;400;500&family=Mitr:wght@400;500&family=Monoton&family=Noto+Sans&family=PT+Sans:wght@700&family=Roboto:wght@700&family=Russo+One&family=Signika+Negative:wght@400;600&family=Varela+Round&display=swap');
+
+/* font-family: 'Anton', sans-serif;
+font-family: 'Comfortaa', cursive;
+font-family: 'Fredoka One', cursive;
+font-family: 'Kanit', sans-serif;
+font-family: 'Mitr', sans-serif;
+font-family: 'Monoton', cursive;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Russo One', sans-serif;
+font-family: 'Signika Negative', sans-serif;
+font-family: 'Varela Round', sans-serif; */
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 450px;
+  --clr-orange-1: hsl(12, 83%, 98%);
+  --clr-orange-2: hsl(14, 91%, 95%);
+  --clr-orange-3: hsl(12, 89%, 89%);
+  --clr-orange-4: hsl(13, 87%, 82%);
+  --clr-orange-5: hsl(13, 88%, 68%);
+  --clr-orange-6: hsl(13, 88%, 55%);
+  --clr-orange-7: hsl(13, 74%, 49%);
+  --clr-orange-8: hsl(13, 74%, 33%);
+  --clr-orange-9: hsl(13, 73%, 25%);
+  --clr-orange-10: hsl(13, 73%, 16%);
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  /* line-height: 1.25; */
+  margin-bottom: 0.75rem;
+
+  font-family: 'Russo One', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+}
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+.app {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(./note-app/background.jpg);
+  /* height: 100vh; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: start;
+  color: rgb(255, 255, 255);
+}
+
+.dapp {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(./note-app/hero-banner.jpg);
+  /* height: 100vh; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: rgb(255, 255, 255);
+}
+.app-center {
+  width: 90vw;
+  margin: 0 auto;
+}
+/* ==========
+HEADER
+=============== */
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+}
+.search-input {
+  width: 100%;
+  border-radius: 25px;
+
+  padding: 5px 0;
+
+  font-weight: 800;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.toggle-btn {
+  margin: 0.3rem 0;
+
+  border: 3px double slateblue;
+
+  background: black;
+}
+.inner-toggle {
+  background: white;
+
+  border: 3px solid white;
+  cursor: pointer;
+  transition: 0.3s linear all;
+}
+.move {
+  transform: translateX(68%);
+}
+
+.note-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.note {
+  background: slateblue;
+
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  position: relative;
+}
+.new-note {
+  background: rgb(36, 10, 66);
+  position: relative;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+
+  position: absolute;
+
+  bottom: 10px;
+}
+.text-area {
+  border: transparent;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  resize: none;
+  padding: 10px;
+  background: transparent;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  height: 90%;
+}
+.text-area:focus {
+  outline: none;
+}
+
+.remove {
+  background: white;
+  border: none;
+
+  /* border: 3px solid black; */
+  font-weight: 900;
+
+  letter-spacing: 0.6px;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(0, 0, 0);
+  border-radius: 30px;
+}
+.remove:hover {
+  background-color: #515151;
+  color: gold;
+}
+.save {
+  background-color: #ededed;
+  color: #000000;
+  font-weight: 900;
+  border: none;
+  border-radius: 15px;
+
+  letter-spacing: 0.5px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+button {
+  cursor: pointer;
+}
+.save:hover {
+  background-color: #515151;
+  color: gold;
+  cursor: pointer;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ======
+
+media queries
+===========
+ */
+@media screen and (min-width: 561px) {
+  .app-center {
+    height: 200vh;
+  }
+
+  .toggle-btn {
+    width: 140px;
+    border-radius: 30px;
+  }
+
+  .inner-toggle {
+    width: 60%;
+    height: 100%;
+    border-radius: 30px;
+  }
+  .note {
+    width: 500px;
+    height: 300px;
+    font-size: 18px;
+  }
+  .text-area,
+  .search-input {
+    font-size: 18px;
+  }
+  .search-input {
+    padding-left: 40px;
+  }
+  .remove,
+  .save {
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .app-center {
+    height: 200vh;
+  }
+  .toggle-btn {
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+  }
+
+  .inner-toggle {
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  .note {
+    width: 85vw;
+    height: 200px;
+    font-size: 3.5vw;
+  }
+  .text-area,
+  .search-input {
+    font-size: 3.5vw;
+  }
+
+  .search-input {
+    padding-left: 10px;
+  }
+
+  .remove,
+  .save {
+    padding: 2px 4px;
+    font-size: 3.5vw;
+  }
 }
